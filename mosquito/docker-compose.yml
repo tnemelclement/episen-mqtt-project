@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mqtt-project-mosquitto
+    ports:
+      - "1883:1883" # Port MQTT standard
+      - "9001:9001" # Port pour WebSocket (si nécessaire)
+    volumes:
+      - ./mosquitto_data:/mosquitto/data
+      - ./mosquitto_log:/mosquitto/log
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: always
+    networks:
+      - mqtt-project-network
+    
+networks:
+  mqtt-project-network:
+    external: true

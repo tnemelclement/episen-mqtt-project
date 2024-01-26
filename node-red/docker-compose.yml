@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  mqtt-nodered:
+    image: nodered/node-red
+    container_name: mqtt-project-nodered
+    volumes:
+      - ./node_red_data:/data
+    ports:
+      - "1880:1880"
+    stdin_open: true
+    tty: true
+    networks:
+      - mqtt-project-network
+  
+networks:
+  mqtt-project-network:
+    external: true
