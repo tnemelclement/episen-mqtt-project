@@ -21,12 +21,16 @@ cd node-red
 docker-compose up -d --build
 ```
 
+Available on `localhost:1880`.
+
 ### InfluxDB
 
 ```bash
 cd influx-db
 docker-compose up -d --build
 ```
+
+Available on `localhost:8086`.
 
 
 ### Mosquito
@@ -36,9 +40,14 @@ cd mosquito
 docker-compose up -d --build
 ```
 
+- `localhost:1883` for MQTT.
+- `localhost:8001` for WebSocket.
+
 ### Grafana
 
 ```bash
 cd grafana
 docker-compose up -d --build
 ```
+
+Available on `localhost:3000`.
